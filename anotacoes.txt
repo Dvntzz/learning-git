@@ -1,0 +1,160 @@
+~ Comandos basicos
+
+- git config --global user.name "{usuario}" ~ adiciona um
+usuário ao seu git
+
+- git config --global user.email "{email}" ~ adiciona um
+email ao seu git
+
+- git init ~ Inicia o repositório na pasta em que
+o command line está
+
+- git status ~ Mostra a situação de trabalho do
+repositório
+
+- git add {nome do arquivo} // git add *.{extensão} //
+git add . ~ adiciona tudo na staging area e nas proximas
+atualizações
+ ** sempre necessário ao colocar um novo arquivo 
+ no projeto
+
+- git commit -m "{Mensagem de commit}" ~ Envia todos os
+arquivos da "Sala de espera" para o repositório
+
+- git commit -a -m "{Mensagem de commit}" ~ Pula o estagio
+de adicionar na staging area e faz o commit direto
+[Recomendado usar de forma moderada]
+
+Criar arquivo chamado .gitignore
+Dentro arquivo .gitignore são os arquivos a serem ignorados
+do commit/add
+ - Abrir o arquivo e colocar o nome dos arquivos a serem
+ignorados
+
+
+--------------- // --------------- // ------------------
+
+
+- git diff ~ mostra os arquivos alterados e quais foram
+as alterações dos arquivos que foram atualizados porem ainda
+não foram adicionados a staging area
+
+- git diff --staged  ~ mostra os arquivos alterados que ja
+estão na staging area
+
+- git log ~ mostra um log de todos os commits efetuados
+no projeto
+
+- git log -p ~ mostra um log de todos os commits efetuados
+porém, em ordem cronologia e com os diffs de cada commit
+
+- git log -p -n ~ mostra o mesmo log, porém o N,
+o número de commits que você quer puxar
+
+- git log --prety=oneline ~ mostra somente o codigo e a
+mensagem de descrição dos commits efetuados
+
+- gitk ~ abre a interface grafica para melhor visualizar
+todos os commits efetuados
+
+- git commit --amend -m {Mensagem} ~ para caso falte a 
+edição de algum arquivo no ULTIMO commit efetuado,
+essa função possibilita alterar o ultimo commit com novas
+atuazações que estão na staging area
+
+- git reset HEAD {nome do arquivo} ~ para retirar o 
+arquivo da staging area, caso seja algum arquivo que
+não devia estar na staging area
+
+- git checkout -- {nome do arquivo} ~ puxa a ultima 
+versão do arquivo que está commitado no repositório
+
+- git rm {nome do arquivo} ~ deleta o arquivo do 
+repositório caso ele não exista mais no seu projeto
+ou ele tenha sido renomeado
+
+
+--------------- // --------------- // ------------------
+
+
+~ Tags são utilizadas para facilitar o a algumas versões
+do projeto
+
+- git tag ~ lista todas as tags do repositório
+
+- git tag -a {nome da tag} -m "{Mensagem}" ~ cria uma tag
+para o repositório
+
+- git tag -a {nome da tag} {id do commit} -m {mensagem} ~
+cria uma tag de um commit específico
+
+- git tag -d {nome da tag} ~ Deleta a tag do repositório
+
+- git show {tag} OR {id do commit} ~ mostra o log do
+commit específicado
+
+- git checkout {tag} OR {branch} ~ faz a mesma função do 
+checkout acima porém puxando do repositório o ultimo commit 
+com a tag informada
+
+
+--------------- // --------------- // ------------------
+
+
+~ Branch são ramificações do sistema usadas para separar
+versões do projeto, como por exemplo a versão de produção
+da versão de testes e homologação, sendo cada um desses
+um branch diferente
+
+- git branch {nome do Branch} ~ Cria um branch no sistema
+
+- git checkout {nome do Branch} ~ Puxa do repositório o branch
+informado no parametro, alterando o branch utilizado
+
+- git checkout -b {nome do Branch} ~ Faz os dois processos
+acima, cria o branch novo e ja faz a alteração
+
+- git branch ~ lista os branchs dentro do repositório
+
+- git branch -d {nome do branch} ~ deleta o branch informado
+no parametro
+
+- git merge {nome do Branch} ~ faz uma junção do branch que
+está sendo utilizado, com o branch informado no parametro
+
+**Conflitos podem acontecer no Merge, por exemplo quando duas
+pessoas alteram o mesmo codigo, e ao tentar dar o merge, o git
+puxa os dois codigos, informando o conflito e solicitado para
+que seja corrigido antes de comittar
+
+
+--------------- // --------------- // ------------------
+
+ ~ Github
+
+- ssh-keygen ~ gera um par de chaves ssh para encriptar a 
+conexão com o Github
+
+** Após gerar a chave SSH, abrir o arquivo "id_rsa.pub", e 
+copiar o codigo e adicionar uma SSH Key no site do Github,
+depois desse processo a máquina ja tera conectado a sua conta
+
+** Para puxar o repositório para a máquina, basta copiar o
+ssh do repositório, na opção de "clone or download" e usar
+o comando
+- git clone {ssh copiado} {nome do projeto} ~ que a partir
+desse comando, ele vai puxar o repositório do Github
+
+- git push {remote * normalmente origin} {branch} ~ envia o 
+repositório da sua pasta local pro Github
+
+- git puçç {remote * normalmente origin} {branch} ~ puxa os
+ultimos commits do Github pro seu repositório local, fazendo
+um merge com os commits que você ja possui
+
+- git fetch {remote * normalmente origin} {nome do branch} ~
+puxa os ultimos commits ainda não existentes, porém, para´
+outro branch separado, caso não seja bom fazer o merge naquela
+hora específica
+
+--------------- // --------------- // ------------------
