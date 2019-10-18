@@ -148,7 +148,7 @@ desse comando, ele vai puxar o repositório do Github
 - git push {remote * normalmente origin} {branch} ~ envia o 
 repositório da sua pasta local pro Github
 
-- git puçç {remote * normalmente origin} {branch} ~ puxa os
+- git pull {remote * normalmente origin} {branch} ~ puxa os
 ultimos commits do Github pro seu repositório local, fazendo
 um merge com os commits que você ja possui
 
